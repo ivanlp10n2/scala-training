@@ -1,3 +1,8 @@
-#Scala for the impatiente - Book solving practices
+#Scala for the impatient - Book solving practices
 
-I'm doing this book and I want to keep track of my resolution, also I want to motivate myself by recording publicly my progress 
+Reasons of this repository
+
+- Keep track of my progress
+- Motivate myself into finish the book
+- Share and help others with (maybe) different ideas
+- Inspire others to publish their own results
