@@ -1,5 +1,4 @@
-import scala.annotation.tailrec
-import scala.language.postfixOps
+import worksheet._
 
 /** returns sigmoid function based on number sign
  * @param num used to check sign */
@@ -10,9 +9,9 @@ def sigmoid(num: Int) =
     case x if x == 0  =>  0
   }
 
-assert( sigmoid(4) == 1)
-assert( sigmoid(-3) == -1)
-assert(sigmoid(0) == 0)
+test( sigmoid(4) == 1)
+test( sigmoid(-3) == -1)
+test(sigmoid(0) == 0)
 
 /** value of {} = ()
  * type of = Unit */
@@ -28,10 +27,11 @@ for (i <- (1 to 10).reverse) print(i)
 // for loop execution with a yield
 var retVal = for{ a <- 0 to 10 if a != 3; if a < 8 }yield a
 
+import scala.language.postfixOps
 /**Produce countdown(n : Int) that prints numbers from n to 0 */
 def countdown(value: Int) = (1 to 10).reverse toList
 
-assert(countdown(10) == List(10,9,8,7,6,5,4,3,2,1))
+test(countdown(10) == List(10,9,8,7,6,5,4,3,2,1))
 
 /**Computes product of Unicode values from a String*/
 def unicode_product : String => Long =
@@ -39,6 +39,7 @@ def unicode_product : String => Long =
 
 unicode_product("Hello")
 
+import scala.annotation.tailrec
 /**recursive unicode_product*/
 def recursive_unicode_function(word : => String ) : Long = {
   @tailrec
@@ -53,6 +54,14 @@ def recursive_unicode_function(word : => String ) : Long = {
 recursive_unicode_function("Hello")
 
 val testWord = "Hello"
-assert (recursive_unicode_function(testWord) == unicode_product(testWord))
+test (recursive_unicode_function(testWord) == unicode_product(testWord))
+
+
+/**Evaluates x ^ n recursively with the following rules
+ * - x ^ n = y if n is even and positive, where y = x ^ (n / 2)
+ * - x ^ n = x * x ^ -1^
+ * @param n is Integer
+ * */
+def compute_pow (base : BigDecimal, exponential : Int)  = 3
 
 
