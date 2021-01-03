@@ -1,6 +1,4 @@
-import java.math
 import scala.annotation.tailrec
-import scala.collection.StringOps
 import scala.language.postfixOps
 
 /** returns sigmoid function based on number sign
@@ -52,7 +50,9 @@ def recursive_unicode_function(word : => String ) : Long = {
   }
   product_unicode(word.toList)
 }
-
 recursive_unicode_function("Hello")
+
+val testWord = "Hello"
+assert (recursive_unicode_function(testWord) == unicode_product(testWord))
 
 
