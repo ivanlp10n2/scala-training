@@ -1,5 +1,6 @@
 import worksheet._
 
+
 /** returns sigmoid function based on number sign
  * @param num used to check sign */
 def sigmoid(num: Int) =
@@ -60,8 +61,26 @@ test (recursive_unicode_function(testWord) == unicode_product(testWord))
 /**Evaluates x ^ n recursively with the following rules
  * - x ^ n = y if n is even and positive, where y = x ^ (n / 2)
  * - x ^ n = x * x ^ -1^
- * @param n is Integer
+ * @param base is number to multiply
+ * @param exponential times to multiply
  * */
-def compute_pow (base : BigDecimal, exponential : Int)  = 3
+def compute_pow (base : Double, exponential : Int)  = math.pow(base, exponential) // To review
 
+import java.time.LocalDate
+/**
+ * Defines strings interpolation*/
+implicit class DateInterpolation(val sc: StringContext) extends AnyVal{
+  def date (args: Any*) : LocalDate = {
+    args match {
+      case args if args.length > 3  ||
+        args.length < 3             => throw new IllegalArgumentException()
+      case args : Seq[Int]          => LocalDate.of(args(0), args(1), args(2))
+      case _                        => LocalDate.now()
+    }
+  }
+}
+val year  = 2021
+val month = 1
+val day   = 31
 
+test (date"$year-$month-$day" == LocalDate.of(year, month, day))

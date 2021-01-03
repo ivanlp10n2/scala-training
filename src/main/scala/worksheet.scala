@@ -8,8 +8,8 @@ package object worksheet {
 
   def test(expr: => Boolean): Unit = {
     expr match {
-      case true => this.print(s"assert OK")
-      case _ => println("====Wrong assertion=== ")
+      case true => println(s"assert OK")
+      case _    => println("====Wrong assertion=== ")
     }
   }
 }
