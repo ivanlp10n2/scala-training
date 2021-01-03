@@ -1,3 +1,4 @@
+import java.math
 import scala.language.postfixOps
 
 /** returns sigmoid function based on number sign
@@ -31,5 +32,11 @@ var retVal = for{ a <- 0 to 10 if a != 3; if a < 8 }yield a
 def countdown(value: Int) = (1 to 10).reverse toList
 
 assert(countdown(10) == List(10,9,8,7,6,5,4,3,2,1))
+
+/**Computes product of Unicode values from a String*/
+def unicode_product : String => BigDecimal=
+  (word : String) => word.toList map (_.toInt) map (_.toLong) reduce (_*_)
+unicode_product("Hello")
+
 
 
