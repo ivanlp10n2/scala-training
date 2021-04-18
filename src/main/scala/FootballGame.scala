@@ -53,16 +53,3 @@ object FootballGame extends App {
 
 }
 
-object Functions {
-
-  def timer[A](f: => A): (A, Long) = {
-    val start = System.currentTimeMillis()
-    val function = f
-    val end = System.currentTimeMillis()
-    (function, end - start)
-  }
-
-  def someLongRunningFunction: Int = {
-    Thread.sleep(33); 3
-  }
-}

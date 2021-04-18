@@ -1,4 +1,4 @@
-import Functions._
+import Step2Functions._
 
 /** multiple evaluation. Manually */
 object Step2 extends App {
@@ -58,7 +58,7 @@ case class Wrapper private(value: Int, log: String) {
 
 }
 
-object Functions {
+object Step2Functions {
   def bind(f: Int => (Int, String),
            acc: (Int, String)
           ): (Int, String) = {
